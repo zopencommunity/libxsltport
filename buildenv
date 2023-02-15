@@ -1,5 +1,5 @@
 export ZOPEN_TARBALL_URL="https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz"
-export ZOPEN_TARBALL_DEPS="make zoslib diffutils grep sed"
+export ZOPEN_TARBALL_DEPS="make zoslib diffutils grep sed libxml2"
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_EXTRA_CONFIGURE_OPTS="--without-python --with-python=no"
 
