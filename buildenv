@@ -1,6 +1,6 @@
-export ZOPEN_TARBALL_URL="https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz"
-export ZOPEN_TARBALL_DEPS="make zoslib diffutils grep sed libxml2"
-export ZOPEN_TYPE="TARBALL"
+export ZOPEN_STABLE_URL="https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz"
+export ZOPEN_STABLE_DEPS="make zoslib diffutils grep sed libxml2"
+export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_EXTRA_CONFIGURE_OPTS="--without-python --with-python=no"
 
 zopen_check_results()
@@ -13,6 +13,29 @@ zopen_check_results()
   echo "actualFailures:0"
   echo "totalTests:1"
   echo "expectedFailures:0"
+}
+
+# Enable zopen_init and zopen_terminate if want to use python3
+zopen_init()
+{
+  if false; then
+    python3_exe=$(whence python3 | head -1)
+    if [ "x${python3_exe}" = "x" ]; then
+      echo "Python3 environment not active. Terminating" >&2
+      exit 8
+    fi
+    python3_exec_dir=$( cd $( dirname "${python3_exe}" ); echo $PWD )
+    export PYTHON_PREFIX=$( cd $( dirname "${python3_exe_dir}" ); echo $PWD )
+    python3 -m venv xslt_python
+    . ./xslt_python/bin/activate
+  fi
+}
+
+zopen_terminate()
+{
+  if false; then
+    deactivate
+  fi
 }
 
 zopen_append_to_env()
