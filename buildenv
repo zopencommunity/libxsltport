@@ -1,6 +1,10 @@
-export ZOPEN_STABLE_URL="https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.37.tar.xz"
-export ZOPEN_STABLE_DEPS="make zoslib diffutils grep sed libxml2"
+# bump: libxslt-version /LIBXSLT_VERSION="(.*)"/ https://gitlab.gnome.org/GNOME/libxslt.git|semver:*
+LIBXSLT_VERSION="1.1.37"
+LIBXSLT_VR="$(echo $LIBXSLT_VERSION | cut -d '.' -f 1-2)"
+
 export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_STABLE_URL="https://download.gnome.org/sources/libxslt/${LIBXSLT_VR}/libxslt-${LIBXSLT_VERSION}.tar.xz"
+export ZOPEN_STABLE_DEPS="make zoslib diffutils grep sed libxml2"
 export ZOPEN_EXTRA_CONFIGURE_OPTS="--without-python --with-python=no"
 
 zopen_check_results()
