@@ -1,5 +1,5 @@
 # bump: libxslt-version /LIBXSLT_VERSION="(.*)"/ https://gitlab.gnome.org/GNOME/libxslt.git|semver:*
-LIBXSLT_VERSION="1.1.39"
+LIBXSLT_VERSION="1.1.42"
 LIBXSLT_VR="$(echo $LIBXSLT_VERSION | cut -d '.' -f 1-2)"
 
 export ZOPEN_BUILD_LINE="STABLE"
