@@ -7,9 +7,9 @@ node('linux')
                         branches: [[name: '*/main']],
                         doGenerateSubmoduleConfigurations: false,
                         extensions: [],
-                        userRemoteConfigs: [[url: "https://github.com/ZOSOpenTools/libxsltport.git"]]])
+                        userRemoteConfigs: [[url: "https://github.com/zopencommunity/libxsltport.git"]]])
         }
   stage('Build') {
-    build job: 'Port-Pipeline', parameters: [string(name: 'PORT_GITHUB_REPO', value: 'https://github.com/ZOSOpenTools/libxsltport.git'), string(name: 'PORT_DESCRIPTION', value: 'libxslt is the XSLT C library' )]
+    build job: 'Port-Pipeline', parameters: [string(name: 'PORT_GITHUB_REPO', value: 'https://github.com/zopencommunity/libxsltport.git'), string(name: 'PORT_DESCRIPTION', value: 'libxslt is the XSLT C library' )]
   }
 }
