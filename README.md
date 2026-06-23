@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/zopencommunity/libxsltport/actions/workflows/codeql.yml/badge.svg)](https://github.com/zopencommunity/libxsltport/actions/workflows/codeql.yml)
+
 [![Automatic version updates](https://github.com/ZOSOpenTools/libxsltport/actions/workflows/bump.yml/badge.svg)](https://github.com/ZOSOpenTools/libxsltport/actions/workflows/bump.yml)
 
 # Libxslt
